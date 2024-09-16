@@ -28,17 +28,17 @@ def uniform_optimal_stopping(len_candidates, num_of_experiments):
 
     return optimal_solution_found_count
 
-def slide_back(sY):
+def slide_back(y):
     maxIndex = 0
-    for i in range(len(sY)):
-        if sY[i] > sY[maxIndex]:
+    for i in range(len(y)):
+        if y[i] > y[maxIndex]:
             maxIndex = i
     bestRatio = 0
     bestIndex = maxIndex
     for i in range(maxIndex, 0, -1):
         ratio = 0
-        if (sY[maxIndex] - sY[i]) != 0:
-            ratio = (maxIndex - i) / (sY[maxIndex] - sY[i])
+        if (y[maxIndex] - y[i]) != 0:
+            ratio = (maxIndex - i) / (y[maxIndex] - y[i])
         if ratio >= bestRatio:
             bestRatio = ratio
             bestIndex = i
@@ -53,8 +53,8 @@ def optimization_experiment(num_of_experiments):
 
     for experiment in range(num_of_experiments):
             sample = uniform_optimal_stopping(100,1000)
-            x1, y1 = zip(*sample.items())
-            opSample = slide_back(y1)
+            x, y = zip(*sample.items())
+            opSample = slide_back(y)
 
             count[str(opSample)] += 1
     
