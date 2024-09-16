@@ -45,6 +45,7 @@ def slide_back(sY):
     return bestIndex + 1
 
 def optimization_experiment(num_of_experiments):
+    print("Optimizing data to stop sooner without losing success chance....")
     count = {}
 
     for i in range(1, 100):
