@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 ###############################
 
 def uniform_optimal_stopping(len_candidates, num_of_experiments):
-    print("Sampling uniform distribution data....")
+    print("Applying optimal stop to uniform distribution data....")
     optimal_solution_found_count = {}
     for i in range(1, len_candidates):
         optimal_solution_found_count[str(i)] = 0
