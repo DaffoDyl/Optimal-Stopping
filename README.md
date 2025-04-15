@@ -1,4 +1,4 @@
-# HW1: Optimal Stopping
+# Optimal Stopping
 
 Contributors: Dylan Armstrong
 
